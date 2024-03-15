@@ -1,0 +1,33 @@
+# Node & npm
+node_modules/
+npm-debug.log
+
+# Logs
+logs
+*.log
+
+# Dependency directories
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Optional eslint cache
+.eslintcache
+
+# Editor directories and files
+.vscode
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*.swo
+*.pyc
+*.pyo
+*.bak
+*.tmp
+
+# Yarn
+yarn-error.log
