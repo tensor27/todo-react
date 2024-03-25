@@ -1,0 +1,14 @@
+.listEmpty {
+	font-size: 22px;
+	color: white;
+	font-weight: bold;
+	border-radius: 10px;
+	max-width: 50%;
+	margin: 20px auto;
+	padding-block: 8px;
+	background-image: linear-gradient(
+		109.6deg,
+		rgb(45, 131, 224) 11.2%,
+		rgba(57, 104, 235, 0.78) 100.2%
+	);
+}

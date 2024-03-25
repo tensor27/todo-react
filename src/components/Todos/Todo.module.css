@@ -1,20 +1,55 @@
 .task {
-	border: 1px solid black;
 	border-radius: 10px;
 	margin: 30px auto;
 	max-width: 50%;
 	text-align: left;
-	padding: 8px;
+	padding: 10px;
+	display: flex;
+	gap: 10px;
 }
 
 .complete {
-	font-size: 22px;
-	color: green;
-	background-color: rgba(105, 253, 105, 0.329);
+	text-decoration: line-through;
+	color: rgba(150, 167, 187, 0.822);
+	background-color: rgba(39, 39, 39, 0.562);
 }
 
 .incomplete {
-	font-size: 22px;
-	color: brown;
+	color: rgb(255, 255, 255);
 	background-color: rgba(253, 127, 127, 0.137);
+	background-image: linear-gradient(
+		109.6deg,
+		rgb(36, 113, 196) 11.2%,
+		rgba(56, 87, 172, 0.78) 100.2%
+	);
+}
+
+.taskText {
+	word-wrap: break-word;
+	width: 100%;
+	font-size: 22px;
+	transition: 0.3s all;
+}
+
+.todoIco {
+	font-size: 1.8rem;
+	cursor: pointer;
+	transition: all 0.3s;
+	padding-inline: 5px;
+}
+
+.todoIco:hover {
+	transform: scale(1.1);
+}
+
+.doneIco:hover {
+	color: skyblue;
+}
+
+.deleteIco:hover {
+	color: rgb(252, 228, 122);
+}
+
+.task.complete .todoIco {
+	color: gray;
 }

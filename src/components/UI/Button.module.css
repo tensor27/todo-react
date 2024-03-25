@@ -1,0 +1,32 @@
+.buttonAction {
+	border: none;
+	border-radius: 6px;
+	padding: 3px 9px;
+	margin-inline: 15px;
+	background-image: linear-gradient(
+		109.6deg,
+		rgb(26, 121, 223) 11.2%,
+		rgba(57, 113, 235, 0.78) 100.2%
+	);
+	font-size: 2rem;
+	cursor: pointer;
+	transition: all 0.3s;
+	color: white;
+}
+
+.buttonAction:hover {
+	transform: scale(1.05);
+
+	color: skyblue;
+}
+
+.buttonAction:disabled {
+	cursor: auto;
+	color: rgb(189, 189, 189);
+	background-image: linear-gradient(
+		109.6deg,
+		rgba(103, 138, 177, 0.651) 11.2%,
+		rgba(84, 111, 170, 0.78) 100.2%
+	);
+	transform: none;
+}

@@ -1,20 +1,27 @@
-import { useState } from 'react'
+import { BiSolidNotepad } from 'react-icons/bi'
+import { FaDeleteLeft } from 'react-icons/fa6'
+import { MdDoneAll } from 'react-icons/md'
 import Styles from './Todo.module.css'
 
-const deleteTask = () => {}
-
-function Todo(props) {
-	const [isComplete, setIsComplete] = useState(false)
-	const { text, id, deleteTask } = props
+function Todo({ todo, deleteTodo, toggleTodo }) {
 	return (
 		<div
 			className={`${Styles.task} ${
-				isComplete ? Styles.complete : Styles.incomplete
+				todo.isCompleted ? Styles.complete : Styles.incomplete
 			}`}
-			onClick={() => (isComplete ? setIsComplete(false) : setIsComplete(true))}
-			onDoubleClick={deleteTask}
 		>
-			{text}
+			<BiSolidNotepad className={Styles.todoIco} />
+			<p className={Styles.taskText}>{todo.text}</p>
+			<FaDeleteLeft
+				className={`${Styles.todoIco} ${Styles.deleteIco}`}
+				onClick={() => {
+					deleteTodo(todo.id)
+				}}
+			/>
+			<MdDoneAll
+				className={`${Styles.todoIco} ${Styles.doneIco}`}
+				onClick={() => toggleTodo(todo.id)}
+			/>
 		</div>
 	)
 }

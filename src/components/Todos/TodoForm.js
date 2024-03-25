@@ -1,46 +1,47 @@
 import { useEffect, useState } from 'react'
+import Button from '../UI/Button'
 import Styles from './TodoForm.module.css'
-function TodoForm(props) {
-	const [task, setTask] = useState('')
-	const [tasks, setTasks] = useState([])
+
+function TodoForm({ setTodos }) {
+	const [text, setText] = useState('')
 
 	useEffect(() => {
 		document.querySelector(`.${Styles.input}`).focus()
-	}, [tasks])
+	}, [text])
 
 	const handleInput = e => {
-		setTask(e.target.value)
+		setText(e.target.value)
 	}
 	const handleSubmit = e => {
 		e.preventDefault()
-		console.log(tasks)
-		setTasks([...tasks, { id: Date.now(), taskText: task }])
-		setTask('')
+		setTodos(text)
+		setText('')
 	}
 
 	return (
-		<>
-			<form className={Styles.taskForm} onSubmit={handleSubmit}>
+		<div className={Styles.taskForm}>
+			<h1>todo</h1>
+
+			<form onSubmit={handleSubmit}>
 				<label>
 					<input
 						className={Styles.input}
-						type='text'
 						placeholder='Enter the task'
-						name='todo'
-						value={task}
+						value={text}
 						onChange={handleInput}
 						required={true}
 						autoFocus
 					/>
 				</label>
-				<button className={Styles.submitButton}>Set task</button>
+				<Button
+					className={Styles.submitButton}
+					type='submit'
+					title='Submit task'
+				>
+					Add
+				</Button>
 			</form>
-			<ul>
-				{tasks.map((item, index) => (
-					<li key={index}>{item.taskText}</li>
-				))}
-			</ul>
-		</>
+		</div>
 	)
 }
 
