@@ -33,13 +33,12 @@
 
 .todoIco {
 	font-size: 1.8rem;
-	cursor: pointer;
 	transition: all 0.3s;
 	padding-inline: 5px;
 }
 
 .todoIco:hover {
-	transform: scale(1.1);
+	transform: scale(1.05);
 }
 
 .doneIco:hover {
